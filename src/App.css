@@ -17,7 +17,7 @@ body, h1 {
 
 .calendar {
   height: 60%;
-  width: 200px;
+  width: 400px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -47,4 +47,55 @@ body, h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.cal-today {
+  display: flex;
+  flex-direction: row;
+}
+
+.today-block {
+  width: 600px;
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: column;
+  align-items: center;
+}
+
+.add-event,
+.add-event_active {
+  margin-top: 20px;
+  background: #4986ff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  position: relative;
+  outline: none;
+}
+
+.add-event > span,
+.add-event_active > span {
+  position: absolute;
+  display: block;
+  background: #fff;
+  width: 20px;
+  height: 2px;
+  top: calc(50% - 1px);
+  left: calc(50% - 10px);
+  transition: 0.5s;
+}
+.add-event > span::before,
+.add-event_active > span::before {
+  content: '';
+  display: block;
+  background: #fff;
+  width: 20px;
+  height: 2px;
+  top: calc(50% - 1px);
+  left: calc(50% - 10px);
+  transform: rotateZ(90deg);
+}
+
+.add-event_active > span {
+  transform: rotateZ(45deg);
 }

@@ -3,6 +3,7 @@ import moment from 'moment';
 import DayNames from './dayNames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Week from './week';
+import Today from './today';
 
 class Calendar extends Component {
   constructor(props){
@@ -78,17 +79,22 @@ class Calendar extends Component {
 
   render(){
     return (
-     <section className="calendar">
-       <header className="header">
-         <div className="month-display row">
-           <h1 onClick={this.prevMonth}>◁</h1>
-           {this.renderMonthLabel()}
-           <h1 onClick={this.nextMonth}>▷</h1>
-         </div>
-         <DayNames />
-       </header>
-       {this.createWeeks()}
-     </section>
+      <div className='cal-today'>
+        <section className="calendar">
+          <header className="header">
+            <div className="month-display row">
+              <h1 onClick={this.prevMonth}>◁</h1>
+              {this.renderMonthLabel()}
+              <h1 onClick={this.nextMonth}>▷</h1>
+            </div>
+            <DayNames />
+          </header>
+          {this.createWeeks()}
+        </section>
+        <Today
+          selected={this.state.selected}
+          />
+      </div>
    );
   }
 }

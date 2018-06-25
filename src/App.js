@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import Header from './components/header';
 import Calendar from './components/calendar';
-import './App.css';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStroopwafel } from '@fortawesome/free-solid-svg-icons';
 
-library.add(faStroopwafel);
+import './App.css';
+
+
 
 class App extends Component {
   render() {
