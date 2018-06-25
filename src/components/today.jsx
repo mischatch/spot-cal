@@ -1,3 +1,4 @@
+import 'rc-time-picker/assets/index.css';
 import React, { Component } from 'react';
 import EventForm from './eventForm';
 
@@ -27,6 +28,7 @@ class Today extends Component {
           className={btnClass}>
           <span></span>
         </button>
+        {this.state.form? <EventForm /> : null }
       </div>
     );
   }

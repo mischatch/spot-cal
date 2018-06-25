@@ -3,21 +3,32 @@ body, h1 {
 }
 
 .App {
-  height: 400px;
+  /* height: 400px; */
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
+  /* position: relative; */
+  flex-direction: column;
 }
 
 .top {
-  position: absolute;
-  top: 0;
+  /* position: absolute; */
+  /* top: 0; */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90px;
+  background: #4886ff;
+  font-size: 21px;
+  color: #fff;
+  text-align: center;
+  line-height: 30px;
+  margin-bottom: 30px;
 }
 
 .calendar {
-  height: 60%;
-  width: 400px;
+  width: 300px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -55,9 +66,9 @@ body, h1 {
 }
 
 .today-block {
+  height: 300px;
   width: 600px;
   display: flex;
-  /* justify-content: center; */
   flex-direction: column;
   align-items: center;
 }
@@ -71,6 +82,7 @@ body, h1 {
   border-radius: 50px;
   position: relative;
   outline: none;
+  transition: 0.5s;
 }
 
 .add-event > span,
@@ -98,4 +110,59 @@ body, h1 {
 
 .add-event_active > span {
   transform: rotateZ(45deg);
+}
+
+.add-event_active + div > .eventForm {
+  opacity: 1;
+}
+
+.eventForm {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  border: 1px solid #4886ff;
+  border-radius: 15px;
+  padding: 20px;
+  margin-top: 20px;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.eventForm > button {
+  background: #4886ff;
+  width: 110px;
+  height: 27px;
+  margin-top: 15px;
+  align-self: center;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 14px;
+  transition: 0.5s;
+}
+
+.timeform {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.timeform > div > label {
+  font-size: 14px;
+  margin: 0 0 2px 3px;
+  color: #8a8a8a;
+  font-weight: 500;
+}
+
+.start,
+.end {
+  display: flex;
+  flex-direction: column;
+}
+
+.eventForm > textarea {
+  width: 295px;
+  border-radius: 4px;
+  border: 1px solid #d9d9d9;
+  margin-top: 20px;
 }
